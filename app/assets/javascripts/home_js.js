@@ -7,12 +7,12 @@ Ext.application({
             items: [
                 {
                     title: 'Calender',
-                    high: 200, 
+                    high: 200,
                     border: true,
                     contentEl: 'event_calender'
                 },{
                     title: 'Charts',
-                    high: 200, 
+                    high: 200,
                     border: true,
                     contentEl: 'charts'
                 },
@@ -31,7 +31,7 @@ Ext.application({
           statics:{
             initilizeGoogleMap: function(){
               var myOptions = {
-                center: new google.maps.LatLng(-34.397, 150.644),
+                center: new google.maps.LatLng(43.40, -89.24),
                 zoom: 8,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
               };
@@ -49,7 +49,8 @@ Ext.application({
             this.key = "AIzaSyDcW-dciX5-CATmF6AthTkU4IzJSEDriac";
             this.googleMap = this.self.initilizeGoogleMap(); // "This is Google Map";
             this.active_maker = null;
-            this.chart = new Highcharts.Chart(char_config);
+            this.chart = new Highcharts.Chart(chart_config);
+            this.chart1 = new Highcharts.Chart(chart_config1);
             this_obj = this;
             //console.log(this.googleMap);
             return this;
@@ -79,9 +80,18 @@ Ext.application({
               },
               success: function(response){
                 var text = response.responseText;
-                //Ext.Msg.alert("Hello", text);
+                Ext.Msg.alert("Hello", text);
                 //debugger;
-                this_obj.chart.series[0].setData([["x", 34], ["y",66]])
+                data = Ext.JSON.decode(text)
+                this_obj.chart.series[0].setData(data["binned precip"], true)
+                this_obj.chart1.series[0].setData(data["precip"])
+                this_obj.chart1.series[1].setData(data["max temp"], true)
+                this_obj.chart1.xAxis[0].setCategories(['\'82', '\'83', '\'84', '\'85',
+                  '\'86', '\'87', '\'88', '\'89', '\'90',
+                  '\'91', '\'92', '\'93', '\'94', '\'95',
+                  '\'96', '\'97', '\'98', '\'99', '\'00',
+                  '\'01', '\'02', '\'03', '\'04', '\'05',
+                  '\'06', '\'07', '\'08', '\'09', '\'10', '\'11'])
                 // process server response here
               }
             });
