@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PicnicPlanner</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "/extjs-4.0.7/resources/css/ext-all", :media => "all" %>
+  <%= stylesheet_link_tag    "/JSCal2/src/css/jscal2", :media=> "all" %>
+  <%= stylesheet_link_tag    "/JSCal2/src/css/border-radius", :media=> "all" %>
+  <%= stylesheet_link_tag    "/JSCal2/src/css/win2k/win2k.css", :media=> "all" %>
+  <%= stylesheet_link_tag    "/JSCal2/src/css/steel/steel.css", :media=> "all" %>
+  
+  <%= stylesheet_link_tag    "/JSCal2/src/css/steel/steel.css", :media=> "all" %>
+ 
+  <%= javascript_include_tag "/extjs-4.0.7/ext-all-debug" %>
+  <%= javascript_include_tag "/JSCal2/src/js/jscal2" %>
+  <%= javascript_include_tag "/JSCal2/src/js/unicode-letter" %>
+
+  <%= javascript_include_tag "application" %>
+  <%=
+    javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyDcW-dciX5-CATmF6AthTkU4IzJSEDriac&sensor=false"
+  %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" %>
+  <%= javascript_include_tag "/high_chart/js/highcharts" %>
+  <%= javascript_include_tag "/high_chart/js/modules/exporting" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body style="" >
+
+<%= yield %>
+
+</body>
+</html>

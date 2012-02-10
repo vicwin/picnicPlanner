@@ -1,0 +1,48 @@
+var LEFT_CAL = Calendar.setup({
+  cont: "cont",
+  // weekNumbers: true,
+  selectionType: Calendar.SEL_MULTIPLE,
+  // showTime: 12
+  // titleFormat: "%B %Y"
+});
+
+RANGE_CAL_1 = new Calendar({
+  inputField: "f_rangeStart",
+  dateFormat: "%B %d, %Y",
+  trigger: "f_rangeStart_trigger",
+  bottomBar: false,
+  onSelect: function() {
+    var date = Calendar.intToDate(this.selection.get());
+    LEFT_CAL.args.min = date;
+    LEFT_CAL.redraw();
+    this.hide();
+  }
+});
+function clearRangeStart() {
+  document.getElementById("f_rangeStart").value = "";
+  LEFT_CAL.args.min = null;
+  LEFT_CAL.redraw();
+};
+RANGE_CAL_2 = new Calendar({
+  inputField: "f_rangeEnd",
+  dateFormat: "%B %d, %Y",
+  trigger: "f_rangeEnd_trigger",
+  bottomBar: false,
+  onSelect: function() {
+    var date = Calendar.intToDate(this.selection.get());
+    LEFT_CAL.args.max = date;
+    LEFT_CAL.redraw();
+    this.hide();
+  }
+});
+function clearRangeEnd() {
+  document.getElementById("f_rangeEnd").value = "";
+  LEFT_CAL.args.max = null;
+  LEFT_CAL.redraw();
+};
+LEFT_CAL.addEventListener("onSelect", function(){
+  var ta = document.getElementById("f_selection");
+  ta.value = this.selection.countDays() + " days selected:\n\n" + this.selection.print("%Y/%m/%d").join("\n");
+});
+
+

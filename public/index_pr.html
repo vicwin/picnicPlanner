@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="JSCal2/src/css/jscal2.css" />
+    <link type="text/css" rel="stylesheet" href="JSCal2/src/css/border-radius.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="JSCal2/src/css/reduce-spacing.css" /> -->
+
+    <link id="skin-win2k" title="Win 2K" type="text/css" rel="alternate stylesheet" href="JSCal2/src/css/win2k/win2k.css" />
+    <link id="skin-steel" title="Steel" type="text/css" rel="alternate stylesheet" href="JSCal2/src/css/steel/steel.css" />
+
+    <script src="JSCal2/src/js/jscal2.js"></script>
+    <script src="JSCal2/src/js/unicode-letter.js"></script>
+
+    <script src="JSCal2/src/js/lang/en.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="JSCal2/demopage.css" />
+  </head>
+  <body style="background-color: #fff">
+
+    <table>
+      <tr>
+        <td valign="top" style="width: 30em;">
+          <div id="cont"></div>
+          <script type="text/javascript">
+
+          </script>
+        </td>
+
+        <td valign="top" style="padding-left: 2em">
+          <table class="properties">
+            <tr>
+              <td class="label">
+                <label for="f_rangeStart">Disable dates before:</label>
+              </td>
+              <td>
+                <input id="f_rangeStart" />
+                <button id="f_rangeStart_trigger">...</button>
+                <button id="f_clearRangeStart" onclick="clearRangeStart()">clear</button>
+                <script type="text/javascript">
+                </script>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">
+                <label for="f_rangeEnd">Disable dates after:</label>
+              </td>
+              <td>
+                <input id="f_rangeEnd" />
+                <button id="f_rangeEnd_trigger">...</button>
+                <button id="f_clearRangeEnd" onclick="clearRangeEnd()">clear</button>
+                <script type="text/javascript">
+                </script>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">
+                <label for="f_selection">Selection:</label>
+              </td>
+              <td>
+                <textarea id="f_selection" style="width: 20em; height: 10em"></textarea>
+                <script type="text/javascript">//<![CDATA[
+
+                //]]></script>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>
